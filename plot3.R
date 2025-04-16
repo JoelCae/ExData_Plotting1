@@ -24,7 +24,8 @@ date_label <- filter(data_power, Time == "00:00:00")
 plot(data_power$Date, data_power$Sub_metering_1, type = "line", xlab = "", ylab = "Energy sub metering", xaxt = "n") 
 lines(data_power$Date, data_power$Sub_metering_2, col = "red")
 lines(data_power$Date, data_power$Sub_metering_3, col = "blue")
-legend("topright", legend = c(paste("Sub_metering", 1:3, sep = "_")), col = c("black", "red", "blue"), lty = 1)
+legend("topright", legend = c(paste("Sub_metering", 1:3, sep = "_")), 
+       col = c("black", "red", "blue"), lty = 1,cex = 0.95)
 axis(1, at = date_label$Date, labels = substr(weekdays(date_label$Date),1,3))
 
 dev.copy(png, filename = "plot3.png", width = 480, height = 480, res = 72)
